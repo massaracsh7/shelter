@@ -19,8 +19,10 @@ module.exports = ({ development }) => ({
   mode: development ? 'development' : 'production',
   devtool: development ? 'inline-source-map' : false,
   entry: {
-    main: './src/index.js',
-    styles: './src/scss/style.scss',
+    main: './pages/main/index.js',
+    pets: './pages/pets/index.js',
+    mainStyles: './src/pages/main/style.scss',
+    petsStyles: './src/pages/pets/style.scss',
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -46,7 +48,6 @@ module.exports = ({ development }) => ({
           filename: 'images/[name][ext]'
         }
       },
-
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
@@ -65,10 +66,20 @@ module.exports = ({ development }) => ({
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: 'styles.[contenthash].css' }),
+    new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new HtmlWebpackPlugin({
       favicon: "./src/assets/favicon/favicon.ico",
-      template: './src/index.html',
+      template: './pages/main/index.html',
+      filename: 'main/index.html',
+      chunks: ['main', 'mainStyles'],
+      inject: 'body',
+      scriptLoading: 'defer',
+    }),
+    new HtmlWebpackPlugin({
+      favicon: "./src/assets/favicon/favicon.ico",
+      template: './pages/pets/index.html',
+      filename: 'pets/index.html',
+      chunks: ['pets', 'petsStyles'],
       inject: 'body',
       scriptLoading: 'defer',
     }),
