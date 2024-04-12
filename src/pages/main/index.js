@@ -1,1 +1,5 @@
-console.log('Hello, webpack!');
+import addBurgerHandler from "../../js/burger.js";
+
+addBurgerHandler();
+
+
