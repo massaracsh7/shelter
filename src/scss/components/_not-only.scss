@@ -1,0 +1,118 @@
+.not-only {
+  padding-top: 210px;
+  color: $color-white;
+  background-image: url('../../assets/images/start-screen-gradient-background.png'),
+    url('../../assets/images/start-screen-background.jpg');
+  background-color: #5c5656;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include media-tablet {
+    padding-top: 181px;
+  }
+
+  @include media-mobile {
+    padding-top: 211px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media-tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__inner {
+    margin-top: -77px;
+
+    @include media-tablet {
+      margin: 0 123px 100px 123px;
+    }
+
+    @include media-mobile {
+      margin-left: 10%;
+      margin-right: 10%;
+      text-align: center;
+    }
+
+    @include media-mobilesm {
+      text-align: center;
+      margin: 0 0 105px 0;
+    }
+  }
+
+  &__title {
+    @include font(44px, 130%, 400);
+    margin-bottom: 40px;
+
+    @include media-mobile {
+      font-size: 250%;
+    }
+
+    @include media-mobilesm {
+      font-size: 25px;
+      letter-spacing: 0.06em;
+    }
+  }
+
+  &__text {
+    @extend %font-add;
+    @include font(15px, 160%, 400);
+    color: $color-menu;
+    margin-bottom: 42px;
+    padding-right: 31px;
+
+    @include media-tablet {
+      padding-right: 0;
+      margin-bottom: 40px;
+    }
+
+    @include media-mobilesm {
+      padding-right: 0;
+    }
+  }
+
+  &__link {
+    @include media-tablet {
+      margin-left: 127px;
+      margin-top: 2px;
+    }
+
+    @include media-mobile {
+      margin-left: 0;
+    }
+
+    @include media-mobilesm {
+      margin-left: 0;
+    }
+
+  }
+
+  &__img {
+    @include media-laptop {
+      width: 50%;
+    }
+
+    @include media-tablet {
+      width: 569px;
+      height: 593px;
+      margin-left: 139px;
+    }
+
+    @include media-mobile {
+      width: 60%;
+      height: 60%;
+      margin-left: 40px;
+    }
+
+    @include media-mobilesm {
+      width: 260px;
+      height: 271px;
+      margin-left: 40px;
+    }
+  }
+
+}
