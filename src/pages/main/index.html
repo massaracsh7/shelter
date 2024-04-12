@@ -1,15 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack Landing Page</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Welcome to My Landing Page</h1>
-    <p>This is a simple landing page built with Webpack, JavaScript, and SCSS.</p>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cozy House is a shelter for pets in Boston, offering a new home for dogs and cats in need. Learn more about our work and how you can help.">
+    <title>Shelter</title>
+  </head>
+  <body class="body">
+    <header class="header">
+      <div class="container header__container">
+        <a class="header__logo" href="#">
+          <h1 class="header__title main-title">Cozy House</h1>
+          <p class="header__subtitle">Shelter for pets in Boston</p>
+        </a>
+        <button class="burger" aria-label="Toggle navigation"></button>
+        <nav class="header__navigation">
+          <ul class="menu">
+            <li class="menu__item">
+              <a class="menu__link menu__link--active" href="#">About the shelter</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="../pets/index.html">Our pets</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#help">Help the shelter</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#contact">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="not-only">
+        <div class="container not-only__container">
+          <div class="not-only__inner">
+            <h2 class="not-only__title">Not only people need a house</h2>
+            <p class="not-only__text">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
+            <a href="#our-friends" class="not-only__link button">Make a friend</a>
+          </div>
+          <img class="not-only__img" src="../images/start-screen-puppy.png" alt="A cute puppy">
+        </div>
+      </section>
+
+      <section class="about section">
+        <div class="container container--flex">
+          <img class="about__img" src="../images/about-pets.png" alt="Happy pets at the shelter">
+          <div class="about__inner">
+            <h2 class="about__title title">About the shelter “Cozy House”</h2>
+            <p class="about__text">Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family. The others will continue to live with us and will be waiting for a lucky chance to become dearly loved.</p>
+            <p class="about__text">We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become attached to the pets and would hardly ever leave them alone.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="our-friends section" id="our-friends">
+        <div class="container container--center">
+          <h2 class="our-friends__title title">Our friends who are looking for a house</h2>
+          <div class="our-friends__slider slider">
+            <button class="slider__btn slider__btn--left" aria-label="Scroll left"></button>
+            <div class="slider__wrapper">
+              <div class="slider__container">
+                <ul class="our-friends__list list-left"></ul>
+                <ul class="our-friends__list list-active"></ul>
+                <ul class="our-friends__list list-right"></ul>
+              </div>
+            </div>
+            <button class="slider__btn slider__btn--right" aria-label="Scroll right"></button>
+          </div>
+          <a href="../pets/index.html" class="our-friends__link button">Get to know the rest</a>
+        </div>
+      </section>
+
+      <section class="help section" id="help">
+        <div class="container container--center">
+          <h2 class="help__title title">How you can help our shelter</h2>
+          <ul class="help__list">
+            <li class="help__item help__item--pet">Pet food</li>
+            <li class="help__item help__item--transport">Transportation</li>
+            <li class="help__item help__item--toys">Toys</li>
+            <li class="help__item help__item--bowls">Bowls and cups</li>
+            <li class="help__item help__item--shampoos">Shampoos</li>
+            <li class="help__item help__item--vitamins">Vitamins</li>
+            <li class="help__item help__item--medicines">Medicines</li>
+            <li class="help__item help__item--blankets">Blankets</li>
+            <li class="help__item help__item--money">Money</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="contacts section" id="contact">
+        <div class="container container--flex">
+          <div class="contacts__inner">
+            <h2 class="contacts__title title">Contacts</h2>
+            <p class="contacts__text">You can find us here:</p>
+            <a href="https://goo.gl/maps/3AtSfbv4jYAcD6tw9" target="_blank" rel="noopener noreferrer" class="footer__location">1 Central Street, Boston (entrance from the store)</a>
+            <a href="https://goo.gl/maps/5a8URXfVRsSDLetSA" target="_blank" rel="noopener noreferrer" class="footer__location">18 South Park, London</a>
+          </div>
+          <form class="contacts__form form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" required></textarea>
+            <button type="submit" class="form__button">Send</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__container">
+        <p class="footer__text">© 2024 Cozy House</p>
+        <p class="footer__text">All rights reserved</p>
+      </div>
+    </footer>
+
+  </body>
 </html>
