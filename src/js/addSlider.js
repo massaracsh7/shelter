@@ -12,51 +12,58 @@ export function createSlider() {
 
   let arr = createNumArray();
   let screenWidth = document.documentElement.offsetWidth;
-  let currentIndex = determineIndexRange(screenWidth);
-
-  let current = arr.slice(0, currentIndex);
+  let current = determineCurrent(screenWidth, arr);
   let prev = createPrevArray(current);
 
-  updateListDisplays(listActive, current);
-  updateListDisplays(listLeft, prev);
-  updateListDisplays(listRight, prev);
+  createSliderList(listActive, current);
+  createSliderList(listLeft, prev);
+  createSliderList(listRight, prev);
 
-  function determineIndexRange(screenWidth) {
-    if (screenWidth >= 1280) return 3;
-    if (screenWidth >= 768) return 2;
-    return 1;
+  function determineCurrent(screenWidth, arr) {
+    if (screenWidth >= 1280) {
+      return [arr[0], arr[1], arr[2]];
+    } else if (screenWidth >= 768) {
+      return [arr[0], arr[1]];
+    } else {
+      return [arr[0]];
+    }
   }
 
-  function updateListDisplays(list, indices) {
-    createSliderList(list, indices);
+  function updateUI(direction) {
+    const targetList = direction === 'left' ? listLeft : listRight;
+    listActive.innerHTML = targetList.innerHTML;
+    let newCurrent = Array.from(listActive.querySelectorAll(".our-friends__item"), item => parseInt(item.dataset.id));
+    createSliderList(direction === 'left' ? listRight : listLeft, current);
+    prev = current;
+    current = newCurrent;
+    createSliderList(direction === 'left' ? listLeft : listRight, createPrevArray(current));
   }
 
   function move(direction) {
-    const isLeft = direction === 'left';
-    carousel.classList.add(`transition-${direction}`);
-    btnLeft.removeEventListener("click", moveLeft);
-    btnRight.removeEventListener("click", moveRight);
-
-    carousel.addEventListener("animationend", function handler(event) {
-      carousel.classList.remove(`transition-${direction}`);
-      listActive.innerHTML = isLeft ? listLeft.innerHTML : listRight.innerHTML;
-
-      let temp = current;
-      current = prev;
-      prev = createPrevArray(current);
-
-      updateListDisplays(isLeft ? listRight : listLeft, temp);
-
-      btnLeft.addEventListener("click", moveLeft);
-      btnRight.addEventListener("click", moveRight);
-
-      carousel.removeEventListener("animationend", handler);
-    }, { once: true });
+    carousel.classList.add(direction === 'left' ? "transition-left" : "transition-right");
+    disableButtons();
+    carousel.addEventListener("animationend", handleAnimationEnd);
   }
 
-  const moveLeft = () => move('left');
-  const moveRight = () => move('right');
+  function disableButtons() {
+    btnLeft.removeEventListener("click", () => move('left'));
+    btnRight.removeEventListener("click", () => move('right'));
+  }
 
-  btnLeft.addEventListener("click", moveLeft);
-  btnRight.addEventListener("click", moveRight);
+  function enableButtons() {
+    btnLeft.addEventListener("click", () => move('left'));
+    btnRight.addEventListener("click", () => move('right'));
+  }
+
+  function handleAnimationEnd(event) {
+    if (event.animationName.startsWith("move-")) {
+      carousel.classList.remove("transition-left", "transition-right");
+      updateUI(event.animationName.includes("left") ? 'left' : 'right');
+      carousel.removeEventListener("animationend", handleAnimationEnd);
+      enableButtons();
+    }
+  }
+
+  enableButtons();
 }
+

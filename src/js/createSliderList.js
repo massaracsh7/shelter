@@ -3,12 +3,20 @@ import { createCard } from "../js/createCard.js";
 
 export function createSliderList(list, arr) {
   list.innerHTML = '';
-
   const screenWidth = document.documentElement.offsetWidth;
-  const max = screenWidth >= 1280 ? 3 : screenWidth >= 768 ? 2 : 1;
+  let itemsCount;
 
-  for (let i = 0; i < max; i++) {
-    list.append(createCard(arr[i]));
+  if (screenWidth >= 1280) {
+    itemsCount = 3; 
+  } else if (screenWidth >= 768) {
+    itemsCount = 2;
+  } else {
+    itemsCount = 1;
   }
-  //showModal();
+
+  arr.slice(0, itemsCount).forEach(item => {
+    list.append(createCard(item));
+  });
+
+  //showModal(); // Можно раскомментировать, если нужно показать модальное окно
 }
