@@ -1,4 +1,4 @@
-export default function addBurgerHandler() {
+export function addBurgerHandler() {
   const burger = document.querySelector(".burger");
   const menu = document.querySelector(".header__navigation");
   const header = document.querySelector('.header');
