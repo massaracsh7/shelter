@@ -19,8 +19,8 @@ module.exports = ({ development }) => ({
   mode: development ? 'development' : 'production',
   devtool: development ? 'inline-source-map' : false,
   entry: {
-    main: './pages/main/index.js',
-    pets: './pages/pets/index.js',
+    main: './src/pages/main/index.js',
+    pets: './src/pages/pets/index.js',
     mainStyles: './src/pages/main/style.scss',
     petsStyles: './src/pages/pets/style.scss',
   },
@@ -69,7 +69,7 @@ module.exports = ({ development }) => ({
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new HtmlWebpackPlugin({
       favicon: "./src/assets/favicon/favicon.ico",
-      template: './pages/main/index.html',
+      template: './src/pages/main/index.html',
       filename: 'main/index.html',
       chunks: ['main', 'mainStyles'],
       inject: 'body',
@@ -77,7 +77,7 @@ module.exports = ({ development }) => ({
     }),
     new HtmlWebpackPlugin({
       favicon: "./src/assets/favicon/favicon.ico",
-      template: './pages/pets/index.html',
+      template: './src/pages/pets/index.html',
       filename: 'pets/index.html',
       chunks: ['pets', 'petsStyles'],
       inject: 'body',
