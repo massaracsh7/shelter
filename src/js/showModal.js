@@ -15,8 +15,6 @@ export function showModal() {
   const html = document.querySelector("html");
   //const headerPets = document.querySelector(".header--pets");
 
-
-
   cards.forEach(item => {
     item.addEventListener("click", () => {
       let index = item.dataset.id;
