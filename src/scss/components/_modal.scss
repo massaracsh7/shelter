@@ -1,0 +1,159 @@
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  background-color: rgba(41, 41, 41, 0.6);
+  display: none;
+  opacity: 0;
+  @extend %transition;
+  align-items: center;
+  justify-content: center;
+
+
+  @include media-mobilesm {
+    width: 320px;
+    height: 100vh;
+  }
+
+  &--active {
+    display: flex;
+    opacity: 1;
+  }
+
+  &__wrapper {
+    position: relative;
+    z-index: 11;
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    background-color: #FAFAFA;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    border-radius: 9px;
+
+    @include media-laptop {
+      width: 630px;
+      height: 350px;
+    }
+
+    @include media-mobile {
+      width: 240px;
+      height: auto;
+    }
+  }
+
+  &__box {
+    flex: 0 0 500px;
+
+    @include media-laptop {
+      flex: 0 0 350px;
+    }
+
+    @include media-mobile {
+      display: none;
+    }
+  }
+
+  &__img {
+    border-radius: 9px 0 0 9px;
+  }
+
+  &__inner {
+    padding: 50px 20px 50px 30px;
+    color: #000000;
+    background-color: #FAFAFA;
+
+    @include media-laptop {
+      padding: 10px 9px 10px 11px;
+      border-radius: 9px;
+    }
+
+    @include media-mobile {
+      padding: 10px;
+    }
+  }
+
+  &__name {
+    @include font(35px, 130%, 400);
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+  }
+
+  &__type,
+  .modal__breed {
+    @include font(20px, 115%, 400);
+    letter-spacing: 0.06em;
+  }
+
+  &__description {
+    padding: 40px 0;
+    @include font(15px, 110%, 400);
+    letter-spacing: 0.06em;
+
+    @include media-laptop {
+      font-size: 13px;
+      padding: 20px 0;
+    }
+  }
+
+  &__list {
+    @include font(15px, 110%, 400);
+    list-style: disc;
+    color: #F1CDB3;
+    margin-left: 10px;
+    letter-spacing: 0.06em;
+    @include media-mobile {
+      margin-left: 15px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 11px;
+
+    @include media-laptop {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__info-title {
+    font-weight: 700;
+    color: #000;
+    margin-right: 5px
+  }
+
+  &__info {
+    color: #000;
+  }
+
+
+  &__btn {
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    width: 52px;
+    height: 52px;
+    border: 2px solid #F1CDB3;
+    right: -42px;
+    top: -52px;
+    background-image: url("../../assets/images/icons/close.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    @extend %transition;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #F1CDB3;
+    }
+
+    @include media-mobile {
+      right: -40px;
+      top: -53px;
+      box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    }
+  }
+
+}

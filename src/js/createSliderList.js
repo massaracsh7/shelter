@@ -1,5 +1,5 @@
 import { createCard } from "../js/createCard.js";
-//import showModal from "../js/showModal.js";
+import { showModal } from "../js/showModal.js";
 
 export function createSliderList(list, arr) {
   list.innerHTML = '';
@@ -18,5 +18,5 @@ export function createSliderList(list, arr) {
     list.append(createCard(item));
   });
 
-  //showModal(); // Можно раскомментировать, если нужно показать модальное окно
+  showModal(); 
 }
