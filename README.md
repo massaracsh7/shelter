@@ -7,7 +7,6 @@ Shelter is a comprehensive project designed to develop a website consisting of t
 ## Key Features
 
 - **Semantic and Adaptive Layout**: The website uses valid and semantic HTML5 tags and is designed to be fully responsive on all devices.
-- **Interactive Elements**: JavaScript is used to enhance user interactions with service focusing in the "Service and our projects" section, an accordion in the "Prices" section, and a custom select dropdown in the "Contacts" section.
 - **Exporting Styles and Graphics from Figma**: Graphics and design elements were converted from Figma assets to ensure visual consistency with the original design.
 - **Interactive Elements**:
   - Burger Menu: Implemented for device widths less than 768px for improved mobile navigation.
