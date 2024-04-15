@@ -1,9 +1,8 @@
 import createPage from "../js/createPage.js";
 import createPetArray from "../js/createPetArray.js";
 
-export default function pagination() {
+export function pagination() {
 
-  const petPage = document.querySelector('.our-friends__list--pets');
   const prev = document.querySelector('.prev');
   const start = document.querySelector('.start');
   const current = document.querySelector('.current');

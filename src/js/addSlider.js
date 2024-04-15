@@ -1,6 +1,7 @@
 import { createNumArray } from "../js/createNumArray.js";
 import { createSliderList } from "../js/createSliderList.js";
 import { createPrevArray } from "../js/createPrevArray.js";
+import { showModal } from "../js/showModal.js";
 
 export function createSlider() {
   const btnLeft = document.querySelector(".slider__btn--left");
@@ -33,10 +34,28 @@ export function createSlider() {
     const targetList = direction === 'left' ? listLeft : listRight;
     listActive.innerHTML = targetList.innerHTML;
     let newCurrent = Array.from(listActive.querySelectorAll(".our-friends__item"), item => parseInt(item.dataset.id));
+
+    // Update lists with new data
     createSliderList(direction === 'left' ? listRight : listLeft, current);
     prev = current;
     current = newCurrent;
     createSliderList(direction === 'left' ? listLeft : listRight, createPrevArray(current));
+
+    // Reapply event listeners
+    attachEventListenersToCards();
+  }
+
+  function attachEventListenersToCards() {
+    const cards = document.querySelectorAll(".our-friends__item");
+    cards.forEach(card => {
+      card.removeEventListener('click', cardClickHandler);
+      card.addEventListener('click', cardClickHandler);
+    });
+  }
+
+  function cardClickHandler(event) {
+    const index = parseInt(event.currentTarget.dataset.id);
+    showModal(index);
   }
 
   function move(direction) {

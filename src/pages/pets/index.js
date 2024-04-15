@@ -1,7 +1,5 @@
 import { addBurgerHandler } from "../../js/burger.js";
-import pagination from "../../js/pagination.js";
-import { showModal } from "../../js/showModal.js";
+import { pagination } from "../../js/pagination.js";
 
 addBurgerHandler();
 pagination();
-showModal();
