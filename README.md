@@ -59,7 +59,7 @@ To get this project up and running on your local machine, follow these steps:
    ```bash
    npm run dev
    
-   This will open up a local server at http://localhost:8080 where you can see your changes as you develop.
+   This will open up a local server at http://localhost:8080/main/index.html where you can see your changes as you develop.
 
 4. **Building for production:**
 
