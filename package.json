@@ -1,7 +1,7 @@
 {
-  "name": "plants",
+  "name": "shelter",
   "version": "0.0.0",
-  "description": "Plants",
+  "description": "Shelter",
   "private": true,
   "scripts": {
     "build": "webpack",
