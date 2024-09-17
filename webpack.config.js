@@ -50,11 +50,13 @@ module.exports = {
       template: './src/pages/main/index.html',
       filename: 'index.html',
       chunks: ['main'],
+      favicon: './src/assets/favicon/favicon.ico',
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/pets/index.html',
       filename: 'pets/index.html',
       chunks: ['pets'],
+      favicon: './src/assets/favicon/favicon.ico',
     }),
     new CopyWebpackPlugin({
       patterns: [
