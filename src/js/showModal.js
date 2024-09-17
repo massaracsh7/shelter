@@ -42,7 +42,7 @@ export function showModal(index) {
   const descr = modal.querySelector('.modal__description');
   const list = modal.querySelector('.modal__list');
 
-  image.src = `../images/modal/${pet["name"]}.png`;
+  image.src = `../assets/images/modal/${pet["name"]}.png`;
   name.textContent = pet["name"];
   type.textContent = `${pet["type"]} - `;
   breed.textContent = pet["breed"];
