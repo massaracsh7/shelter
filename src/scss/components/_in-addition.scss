@@ -1,0 +1,115 @@
+.in-addition {
+  background-color: $color-light;
+  padding-bottom: 102px;
+
+  @include media-tablet {
+    padding-bottom: 98px;
+  }
+
+  @include media-mobilesm {
+    padding-bottom: 41px;
+  }
+
+  &__img {
+    margin-left: 143px;
+
+    @include media-laptop {
+      width: 50%;
+      margin-left: 15px;
+    }
+
+    @include media-tablet {
+      width: 505px;
+      margin-left: 0;
+      margin-top: 0;
+    }
+
+    @include media-mobilesm {
+      width: 260px;
+      height: 135.2px;
+    }
+  }
+
+  &__inner {
+    margin-right: 110px;
+    margin-left: 30px;
+
+    @include media-laptop {
+      margin-right: 30px;
+      margin-left: 30px;
+    }
+
+    @include media-tablet {
+      margin-right: 132px;
+      margin-left: 162px;
+      margin-bottom: 60px;
+    }
+
+    @include media-mobile {
+      margin-right: 15px;
+      margin-left: 15px;
+    }
+
+    @include media-mobilesm {
+      margin-right: 10px;
+      margin-left: 9px;
+      margin-bottom: 44px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include media-mobilesm {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__info {
+    margin-bottom: 20px;
+    color: $color-title;
+    letter-spacing: 0.06em;
+
+    @include media-mobilesm {
+      letter-spacing: 0.00em;
+      line-height: 160%;
+      padding-left: 4px;
+    }
+
+  }
+
+  &__link {
+    margin-bottom: 20px;
+    padding-left: 60px;
+    @include font(20px, 115%, 400);
+    letter-spacing: 0.06em;
+    background-image: url('../../assets/images/icons/credit-card.svg');
+    background-repeat: no-repeat;
+    background-position: 15px center;
+
+    @include media-mobile {
+      font-size: 15px;
+    }
+
+    @include media-mobilesm {
+      font-size: 15px;
+      line-height: 110%;
+      letter-spacing: 0.06em;
+      padding: 13px 15px 13px 60px;
+    }
+  }
+
+  &__text {
+    @extend %font-add;
+    @include font(12px, 18px, 400, italic);
+    color: $color-grey;
+    padding-right: 50px;
+
+    @include media-mobilesm {
+      padding-right: 0px;
+      text-align: justify;
+    }
+  }
+
+}

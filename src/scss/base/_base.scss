@@ -1,0 +1,88 @@
+html {
+  scroll-behavior: smooth;
+  @include media-mobile {
+    overflow-x: hidden;
+  }
+}
+
+body {
+  @extend %font-prim;
+  @include font(15px, 16.5px, 400);
+  color: $color-text;
+  position: relative;
+    @include media-mobile {
+      overflow-x: hidden;
+    }
+}
+
+body.overflow-hidden {
+  overflow: hidden;
+  background: rgba(41, 41, 41, 0.6);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.title {
+  @include font(35px, 45.5px, 400);
+  letter-spacing: 0.06em;
+  color: $color-title;
+
+  &--white {
+    color: $color-white;
+  }
+
+  @include media-mobile {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  @include media-mobilesm {
+    text-align: center;
+    font-size: 25px;
+    line-height: 130%;
+  }
+}
+
+.main-title {
+  color: $color-primary;
+  @include font(32px, 110%, 400);
+  letter-spacing: 0.06em;
+
+  &--pets {
+    color: $color-title;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.main {
+  margin: -120px 0 0 0;
+}
+
+.main--pets {
+  margin: 0;
+  @include media-tablet {
+    margin-bottom: -21px;
+  }
+}
+
+.section {
+  padding-top: 80px;
+  padding-bottom: 100px;
+
+  @include media-mobile {
+    padding-top: 60px;
+    padding-bottom: 64px;
+  }
+
+  @include media-mobilesm {
+    padding-top: 41px;
+    padding-bottom: 44px;
+  }
+}

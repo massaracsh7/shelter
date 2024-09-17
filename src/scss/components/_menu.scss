@@ -1,0 +1,50 @@
+.menu {
+  display: flex;
+  gap: 36px;
+  padding-top: 15px;
+
+  @include media-mobile {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    padding: 219px 0 50px 0;
+  }
+
+
+  &__link {
+    @extend %font-add;
+    @include font(15px, 24px, 400);
+    color: $color-menu;
+    @extend %transition;
+    @include media-mobile {
+      font-size: 32px;
+      line-height: 160%;
+    }
+
+    &:hover {
+      color: $color-menu-active;
+    }
+
+    &:active {
+      color: $color-menu-active;
+      border-bottom: 3px solid $color-primary;
+    }
+
+    &--active {
+      color: $color-menu-active;
+      border-bottom: 3px solid $color-primary;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    &--pets {
+      color: $color-title;
+
+      &:hover {
+        color: $color-bg;
+      }
+    }
+
+  }
+
+}

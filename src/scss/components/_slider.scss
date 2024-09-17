@@ -1,0 +1,233 @@
+.slider {
+  position: relative;
+  margin-bottom: 59px;
+  padding: 0 105px;
+
+  @include media-laptopxl {
+    margin: 0 auto;
+    margin-bottom: 60px;
+    padding-left: 64px;
+    padding-right: 64px;
+    width: 708px;
+  }
+
+  @include media-tablet {
+    margin-bottom: 60px;
+    padding: 0 64px;
+  }
+
+  @include media-mobile {
+    margin: 0 auto;
+    margin-bottom: 80px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 270px;
+
+  }
+
+  @include media-mobilesm {
+    margin-bottom: 116px;
+    padding: 0;
+  }
+
+  &__btn {
+    position: absolute;
+    display: block;
+    width: 52px;
+    height: 52px;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    top: 44%;
+
+    @include media-mobile {
+      top: 455px;
+    }
+
+    &--right {
+      right: 0;
+      background-image: url('../../assets/images/icons/arrow.svg');
+      transform: rotate(-180deg);
+
+      @include media-mobilesm {
+        right: 59px;
+      }
+    }
+
+    &--left {
+      left: 0;
+      background-image: url('../../assets/images/icons/arrow.svg');
+
+      @include media-mobilesm {
+        left: 59px;
+      }
+    }
+  }
+}
+
+@keyframes move-right {
+  from {
+    left: -990px;
+  }
+
+  to {
+    left: -1980px;
+  }
+}
+
+@keyframes move-right-laptop {
+  from {
+    left: -580px;
+  }
+
+  to {
+    left: -1160px;
+  }
+}
+
+@keyframes move-right-tablet {
+  from {
+    left: -580px;
+  }
+
+  to {
+    left: -1160px;
+  }
+}
+
+@keyframes move-right-mobilelg {
+  from {
+    left: -270px;
+  }
+
+  to {
+    left: -540px;
+  }
+}
+
+@keyframes move-right-mobile {
+  from {
+    left: -270px;
+  }
+
+  to {
+    left: -540px;
+  }
+}
+
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 2s;
+
+  @include media-laptopxl {
+    animation-name: move-right-laptop;
+  }
+
+  @include media-tablet {
+    animation-name: move-right-tablet;
+  }
+    @include media-mobile {
+      animation-name: move-right-mobilelg;
+    }
+
+  @include media-mobilesm {
+    animation-name: move-right-mobile;
+  }
+}
+
+@keyframes move-left {
+  from {
+    left: -990px;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+@keyframes move-left-laptop {
+  from {
+    left: -580px;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+@keyframes move-left-tablet {
+  from {
+    left: -580px;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+@keyframes move-left-mobilelg {
+  from {
+    left: -270px;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+@keyframes move-left-mobile {
+  from {
+    left: -270px;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 2s;
+
+  @include media-laptopxl {
+    animation-name: move-left-laptop;
+  }
+
+  @include media-tablet {
+    animation-name: move-left-tablet;
+  }
+  @include media-mobile {
+    animation-name: move-left-mobilelg;
+  }
+  @include media-mobilesm {
+    animation-name: move-left-mobile;
+  }
+
+}
+
+.slider__wrapper {
+  overflow: hidden;
+}
+
+.slider__container {
+  position: relative;
+  left: -990px;
+  display: flex;
+
+  @include media-laptopxl {
+    left: -580px;
+  }
+
+  @include media-tablet {
+    left: -580px;
+  }
+
+  @include media-mobile {
+    left: -270px;
+  }
+
+  @include media-mobilesm {
+    left: -270px;
+  }
+}

@@ -1,0 +1,41 @@
+.button {
+  display: inline-block;
+  background-color: $color-primary;
+  border-radius: 100px;
+  padding: 15px 45px;
+  @include font(17px, 130%, 400);
+  letter-spacing: 0.06em;
+  color: $color-bg;
+  @extend %transition;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-primary-light;
+  }
+
+  &--clear {
+    background-color: transparent;
+    border: 2px solid $color-primary;
+    padding-bottom: 11px;
+    padding-top: 14px;
+  }
+
+  &--long {
+    border-radius: 10px;
+    padding: 10px 15px;
+    @include font(17px, 130%, 400);
+    color: $color-title;
+  }
+
+}
+
+.slider__btn {
+  @extend %transition;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-primary-light;
+    border-color: $color-primary-light;
+    ;
+  }
+}
