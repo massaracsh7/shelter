@@ -2,7 +2,7 @@
 
 ## Overview
 
-![Screen ](assets/screen.png)
+![Screen ](src/assets/screen.png)
 
 Shelter is a comprehensive project designed to develop a website consisting of two pages. The goal is to create a site that is both adaptive and interactive, displaying proficiency in web development techniques including semantic HTML, maintainable CSS, and interactive JavaScript functionalities.
 
